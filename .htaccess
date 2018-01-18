@@ -1,0 +1,4 @@
+Options -Indexes
+RewriteEngine On
+RewriteRule ^([^/]*)\.doc$ /index.php?page=$1 [L]
+RewriteRule ^([^/]*)\.doc+([^/]*) /index.php?page=$1&u=$2 [L]

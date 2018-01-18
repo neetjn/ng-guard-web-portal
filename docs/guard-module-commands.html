@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Guard Docs - Module Commands</title>
+        <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="//guard.neetgroup.net/source/prism-plugin/prism.css" type="text/css">
+        <script src='//guard.neetgroup.net/source/prism-plugin/prism.js'></script>
+        <style>
+        html {
+            margin:0;
+            padding:0;
+        }
+        body{
+            font-family: 'Play', sans-serif;
+            background-color:#f5f5f5;
+        }
+        div.wrapper{
+            display:block;
+        }
+        div.wrapper.main{
+            margin:5em auto 5em auto;
+            width:800px;
+            background-color:#fff;
+            border:1px solid #d3d3d3;
+            border-radius:5px;
+        }
+        div.wrapper.inner{
+            padding:0 50px 5px 50px;
+        }
+        h1.title {
+            cursor:default;
+            font-family: 'Oswald', sans-serif;
+            text-decoration:underline;
+            color:#b98259;
+        }
+        h1.title#index{
+            font-size:35px;
+            text-align:center;
+            text-decoration:none;
+            color:#858f93;
+        }
+        h1.title.large{
+            font-size:25px;
+        }
+        p.information{
+            cursor:default;
+            padding:0 0 0 5px;
+            font-size:14px;
+            color:#696969;
+        }
+        </style>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="wrapper main">
+            <div class="wrapper inner">
+                <h1 id="index" class="title large">Module Commands Index</h1>
+                <div class="wrapper block">
+                    <h1 class="title large">User Module</h1>
+                    <p class="information">
+                        The User Module requires developers supply both a username and phrase with their request.
+                        The following is an example of a proper User Module request,
+                        <br /><br />
+                        <span style="color:#358024;">
+                            //driver?<b>key</b>=0&<b>mod</b>=user&<b>user</b>=<i>username</i>&<b>phrase</b>=<i>phrase</i>
+                        </span>
+                        <br /><br />
+                        and the following is a list of commands,
+                    </p>
+<pre>
+    <code class="language-php">
+    function \Module\User::data( $branch ) {
+        /*
+         * return profile data dump
+         *
+             
+            expecting $branch as 'guard' || 'foro'
+             
+         */
+    }
+        
+    function \Module\User::query( $field ) {
+        /*
+         * return guard user data
+         *
+             
+            expecting $field as 'admin' || 'developer' || 'banned'
+             
+         */
+    }
+        
+    function \Module\User::bit.read( $field ) {
+        /*
+         * return custom bit data
+         *
+              
+            bit data structured using developer key as node
+            
+            $user_bit =
+            {
+                "key" :
+                {
+                    "field" : "value"
+                }
+            };
+              
+         */
+    }
+        
+    function \Module\User::bit.update( $field, $update ) {
+        /*
+         * update custom bit data
+         *
+             
+            bit data structured using developer key as node
+            
+            $user_bit =
+            {
+                "key" :
+                {
+                    "field" : "value"
+                }
+            };
+             
+         */
+    }
+        
+    function \Module\User::subscribe( $tag ) {
+        /*
+         * subscribe to authorized subscription
+         *
+             
+            information automatically queried from tag
+             
+         */
+    }
+    </code>
+</pre>
+                    <p class="information">
+                        These commands can be specified exactly as labeled above. As for passing parameters,
+                        they can be specified in alphabetical order ( `a`, `b`, `c`, `d`, `e`, `f` ). The
+                        maximal number of parameters read, are 6. An example of a complete request being,
+                        <br /><br />
+                        <span style="color:#358024;">
+                            //driver?<b>key</b>=0&<b>mod</b>=user&<b>user</b>=<i>username</i>&<b>phrase</b>=<i>phrase</i>&<b>cmd</b>=data&<b>a</b>=guard
+                        </span>
+                        <br /><br />
+                        `a` standing for `$branch`.
+                    </p>
+                    <p class="information">
+                        When using the User Module, developers can alternatively use 'sessions'. Sessions
+                        are used to deprecate the specification of a user's username and authentication phrase.
+                        This feature works by storing an encoded token in a web client or browser, whilst communicating
+                        with the main driver. A session can be created like so,
+                        <br /><br />
+                        <span style="color:#358024;">
+                            //driver?<b>key</b>=0&<b>mod</b>=user&<b>sesh</b>=create&<b>a</b>=<i>username</i>&<b>b</b>=<i>phrase</i>
+                        </span>
+                        <br /><br />
+                        Once a session is created, developers can use user commands without specifying a username or phrase,
+                        <br /><br />
+                        <span style="color:#358024;">
+                            //driver?<b>key</b>=0&<b>mod</b>=user&<b>sesh</b>=run&<b>cmd</b>=data&<b>a</b>=guard
+                        </span>
+                        <br /><br />
+                        Sessions can also be closed easily with the following command,
+                        <br /><br />
+                        <span style="color:#358024;">
+                            //driver?<b>key</b>=0&<b>mod</b>=user&<b>sesh</b>=end
+                        </span>
+                        <br /><br />
+                        If Sessions are not manually closed, they will be automatically deactivated after 24 hours.
+                    </p>
+                </div>
+                <div class="wrapper block">
+                    <h1 class="title large">App Module</h1>
+                    <p class="information">
+                        Every App is bestowed an ID serial upon creation. These serials must be specified
+                        when creating a request. The following is an example of a proper App Module request,
+                        <br /><br />
+                        <span style="color:#358024;">
+                            //driver?<b>key</b>=0&<b>mod</b>=app&<b>id</b>=<i>serial</i>
+                        </span>
+                        <br /><br />
+                        and the following is a list of commands,
+                    </p>
+<pre>
+    <code class="language-php">
+    function \Module\App::data() {
+        // return app data dump
+    }
+    
+    function \Module\App::read( $field ) {
+        // return app data
+    }
+    
+    function \Module\App::update( $field, $update ) {
+        /*
+         * update data field
+         *
+         
+            developer key must match with app key
+            - app can be created @ http://guard.neetgroup.net/developers.doc
+         */
+    }
+    
+    function \Module\App::delete( $field ) {
+        /*
+         * completely remove data field
+         *
+         
+            developer key must match with app key
+            - app can be created @ http://guard.neetgroup.net/developers.doc
+         
+         */
+    }
+    </code>
+</pre>
+                    <p class="information">
+                        These commands can be specified exactly as labeled above. As for passing parameters,
+                        they can be specified in alphabetical order ( `a`, `b`, `c`, `d`, `e`, `f` ). The
+                        maximal number of parameters read, are 6. An example of a complete request being,
+                        <br /><br />
+                        <span style="color:#358024;">
+                            //driver?<b>key</b>=0&<b>mod</b>=app&<b>id</b>=<i>serial</i>&<b>cmd</b>=read&<b>a</b>=<i>field</i>
+                        </span>
+                        <br /><br />
+                        `a` standing for `$field`.
+                    </p>
+                </div>
+                <div class="wrapper block">
+                    <h1 class="title large">Subscription Module</h1>
+                    <p class="information">
+                        Every Subscription is bestowed an ID serial upon creation. These serials must be specified
+                        when creating a request. The following is an example of a proper Subscription Module request,
+                        <br /><br />
+                        <span style="color:#358024;">
+                            //driver?<b>key</b>=0&<b>mod</b>=subscription&<b>id</b>=<i>serial</i>
+                        </span>
+                        <br /><br />
+                        and the following is a list of commands,
+                    </p>
+<pre>
+    <code class="language-php">
+    function \Module\Subscription::data() {
+        // return subscription data dump
+    }
+    
+    function \Module\Subscription::read( $field ) {
+        // return subscription data
+    }
+    
+    function \Module\Subscription::update( $field, $update ) {
+        /*
+         * update data field
+         *
+         
+            developer key must match with subscription key
+            - subscription can be created @ http://guard.neetgroup.net/developers.doc
+         
+         */
+    }
+    </code>
+</pre>
+                    <p class="information">
+                        These commands can be specified exactly as labeled above. As for passing parameters,
+                        they can be specified in alphabetical order ( `a`, `b`, `c`, `d`, `e`, `f` ). The
+                        maximal number of parameters read, are 6. An example of a complete request being,
+                        <br /><br />
+                        <span style="color:#358024;">
+                            //driver?<b>key</b>=0&<b>mod</b>=subscription&<b>id</b>=<i>serial</i>&<b>cmd</b>=read&<b>a</b>=<i>field</i>
+                        </span>
+                        <br /><br />
+                        `a` standing for `$field`.
+                    </p>
+                </div>
+                <div class="wrapper block">
+                    <h1 class="title large">Util Module</h1>
+                    <p class="information">
+                        The Util Module, is the only module that will function whilst the server is ever
+                        to go offline. Util Module requests also do not require and prereq parameters.
+                        The following is a list of commands,
+                    </p>
+<pre>
+    <code class="language-php">
+    function \Module\Util::online() {
+        // return driver status
+    }
+    
+    function \Module\Util::maintenance() {
+        // return driver status
+    }
+    
+    function \Module\Util::blacklisted( $gizmo_key ) {
+        // x
+    }
+    </code>
+</pre>
+                    <p class="information">
+                        These commands can be specified exactly as labeled above. As for passing parameters,
+                        they can be specified in alphabetical order ( `a`, `b`, `c`, `d`, `e`, `f` ). The
+                        maximal number of parameters read, are 6. An example of a complete request being,
+                        <br /><br />
+                        <span style="color:#358024;">
+                            //driver?<b>key</b>=0&<b>mod</b>=util&<b>cmd</b>=blacklisted&<b>a</b>=<i>key</i>
+                        </span>
+                        <br /><br />
+                        `a` standing for `$gizmo_key`.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

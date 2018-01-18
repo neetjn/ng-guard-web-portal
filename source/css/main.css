@@ -1,0 +1,634 @@
+*{
+	margin:0;
+	padding:0px;
+}
+
+html{
+	position:relative;
+	min-height:100%;
+	min-width:100%;
+}
+
+body{
+	width:780px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#f5f5f5;
+	font-family:'Play',sans-serif;
+	color:#000;
+}
+
+dl{
+	overflow:auto;
+}
+
+dt{
+	float:left;
+	color:#747474;
+}
+
+dd{
+	float:right;
+	color:#000;
+}
+
+table{
+	cursor:default;
+	display:block;
+	border-collapse:collapse;
+	text-align:center;
+}
+
+th{
+	background-color:#3B3D3E;
+	font-size:20px;
+	color:#fff;
+}
+
+th,tr,td{
+	padding:5px;
+	width:1000px;
+	border:1px solid #3B3D3E;
+	font-family:'Yanone Kaffeesatz',sans-serif;
+	font-size:18px;
+}
+
+a{
+	color:inherit;
+	text-decoration:none;
+}
+
+.wrapper{
+	display:block;
+}
+
+.header.info.wrapper{
+	cursor:default;
+	padding:5px;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+	background-color:#61ae50;
+	text-align:center;
+	color:#fff;
+}
+
+.header.logo.wrapper{
+	margin:2em 0 1.5em 1em;
+}
+
+.header.logo.image{
+	width:186.6666666666667px;
+	height:40.13333333333333px;
+}
+
+.header.navigation.wrapper{
+	background-color:#3B3D3E;
+	border-radius:4px 4px 0 0;
+}
+
+.header.navigation.list{
+	list-style-type:none;
+	display:table;
+}
+
+.header.navigation.tab{
+	display:inline;
+	float:left;
+}
+
+.header.navigation.tab.icon{
+	display:block;
+	height:20px;
+	padding:15px 15px 10px 15px;
+	text-decoration:none;
+	text-transform:uppercase;
+	color:#d3d3d3;
+	font-weight:bold;
+}
+
+.header.navigation.tab.icon:hover{
+	color:#fff;
+}
+
+.header.navigation.tab.link{
+	display:block;
+	height:20px;
+	padding:15px 15px 10px 15px;
+	text-transform:uppercase;
+	color:#d3d3d3;
+	font-weight:bold;
+}
+
+.header.navigation.tab.link:hover{
+	background-color:#3498DB;
+	color:#fff;
+}
+
+.header.navigation.tab.link.active{
+	height:19px;
+	background-color:#f7f7f7;
+	color:#3498DB;
+	border-top:1px solid #d3d3d3;
+}
+
+.header.navigation.tab.link.active:hover{
+	background-color:#f7f7f7;
+	color:#3498DB;
+	border-bottom:none;
+}
+
+.header.announcement.wrapper{
+	background-color:#f7f7f7;
+	border:1px solid #D3D3D3;
+	border-top:none;
+	padding:10px;
+}
+
+.header.announcement.content{
+	cursor:default;
+	margin-top:-1px;
+	font-style:italic;
+}
+
+.global.wrapper{
+	background-color:#fff;
+	padding:50px;
+	border:1px solid #D3D3D3;
+	border-top:0;
+	border-bottom-left-radius:4px;
+	border-bottom-right-radius:4px;
+}
+
+.global.header{
+	cursor:default;
+	font-weight:bold;
+}
+
+.global.header.small{
+	font-size:25px;
+}
+
+.global.header.large{
+	font-size:38px;
+}
+
+.guard.icon.large{
+	cursor:pointer;
+}
+
+.guard.icon.message{
+	cursor:default;
+	padding:5px;
+}
+
+.page.panel.wrapper{
+	overflow:auto;
+}
+
+.page.panel.left{
+	float:left;
+}
+
+.page.panel.right{
+	float:right;
+}
+
+.login.panel.wrapper{
+	overflow:auto;
+	background-color:#f1f1f1;
+	border:1px solid #d3d3d3;
+}
+
+.login.panel.left{
+	float:left;
+	margin-top:1.5em;
+	margin-left:4em;
+	padding:25px;
+}
+
+.login.panel.right{
+	float:right;
+	margin-right:4em;
+	padding:25px;
+}
+
+.login.panel.form{
+	padding:5px;
+}
+
+.registration.panel.wrapper{
+	overflow:auto;
+	background-color:#f1f1f1;
+	border:1px solid #d3d3d3;
+}
+
+.registration.panel.left{
+	float:left;
+	margin-left:4em;
+	padding:25px;
+}
+
+.registration.panel.right{
+	margin-top:1.5em;
+	float:right;
+	margin-right:4em;
+	padding:25px;
+}
+
+.registration.panel.form{
+	padding:5px;
+}
+
+.page.panel.wrapper#home{
+	margin-top:-5px;
+}
+
+.blog.post.wrapper{
+	cursor:default;
+	margin:5px 0 0 0;
+	padding:5px 0 0 20px;
+	width:400px;
+	border:1px solid #3b3d3e;
+	border-bottom:none;
+	border-collapse:collapse;
+	border-radius:2px;
+	background-color:#f7f7f7;
+}
+
+.blog.post.title{
+	font-family:'Yanone Kaffeesatz',sans-serif;
+	font-size:25px;
+	color:#3b3d3e;
+}
+
+.blog.post.title#magnify{
+	font-size:27px;
+}
+
+.blog.post.content{
+	padding:0 0 0 10px;
+	margin:5px 0 10px 0;
+	width:350px;
+	font-size:12px;
+	border-left:3px solid #d3d3d3;
+}
+
+.blog.post.content#magnify{
+	font-size:14px;
+}
+
+.blog.post.nodes.wrapper{
+	margin:0 0 0 -20px;
+	overflow:auto;
+	box-sizing:border-box;
+	padding:5px;
+	width:420px;
+	border-radius:0;
+	background-color:#3b3d3e;
+	color:#fff;
+	text-align:center;
+}
+
+.blog.post.nodes.list{
+	list-style-type:none;
+	display:inline-block;
+}
+
+.blog.post.node{
+	display:inline-block;
+	padding:0 5px 0 15px;
+}
+
+.blog.post.panel{
+	display:block;
+	margin:5px 0 0 0;
+	border:1px solid #d3d3d3;
+	border-radius:2px;
+}
+
+.blog.post.form{
+	display:block;
+	padding:10px;
+}
+
+.blog.header#source{
+	text-align:center;
+	padding:5px 0 0 0;
+}
+
+.blog.comment.wrapper{
+	cursor:default;
+	margin:5px 0 0 0;
+	padding:10px 20px 10px 20px;
+	width:200px;
+	border:1px solid #d3d3d3;
+	border-collapse:collapse;
+	border-radius:4px;
+	background-color:#f7f7f7;
+}
+
+.blog.comment.content{
+	margin:5px 0 5px 0;
+	font-size:14px;
+	color:#777;
+}
+
+.blog.comment.author{
+	font-size:14px;
+	color:#444;
+}
+
+.blog.comment.panel{
+	display:block;
+	margin:5px 0 0 0;
+	border:1px solid #d3d3d3;
+	border-radius:2px;
+}
+
+.blog.comment.form{
+	display:block;
+	padding:10px;
+}
+
+.blog.input.textbox#title,.blog.input.textarea#content{
+	width:95%;
+}
+
+.page.panel.left#profile{
+	padding:5px;
+}
+
+.profile.avatar.block{
+	display:block;
+	padding:2px;
+	background-color:#3b3d3e;
+	border-radius:2px;
+}
+
+.profile.info.block{
+	margin:1em 0 0 0;
+	padding:5px;
+	border:1px solid #747474;
+	border-radius:2px;
+	font-family:'Yanone Kaffeesatz',sans-serif;
+	font-size:12px;
+}
+
+.profile.interface.tab.wrapper{
+	margin:1.5em 15em 0 0;
+	width:270px;
+}
+
+.profile.interface.tab.content{
+	cursor:default;
+	overflow:auto;
+	width:485px;
+}
+
+.profile.content.header{
+	cursor:default;
+	font-size:20px;
+	font-weight:bold;
+}
+
+.profile.content.block{
+	display:block;
+	padding:5px 0 0 5px;
+	font-size:14px;
+}
+
+.profile.bold.label{
+	color:#3B3D3E;
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+.developers.authentication{
+	margin-bottom:1em;
+	padding:5px;
+	background-color:#e1ffcf;
+	border-radius:2px;
+}
+
+.developers.information{
+	cursor:default;
+	padding:10px;
+	color:#696969;
+	font-size:14px;
+	text-align:left;
+}
+
+.tools.menu.panel.form{
+	overflow:auto;
+	padding:10px 15px 10px 15px;
+	background-color:#f5f5f5;
+	border:1px solid #f1f1f1;
+	border-radius:2px;
+}
+
+.tools.menu.panel.form#new{
+	background-color:#FCFFB3;
+	border:1px solid #fffeab;
+}
+
+.tools.panel.left{
+	float:left;
+}
+
+.tools.panel.right{
+	float:right;
+}
+
+.tools.icon{
+	cursor:default;
+	font-weight:bold;
+	font-size:42px;
+}
+
+.tools.icon#new{
+	color:#ffcd00;
+}
+
+.tools.icon#existing{
+	color:#d3d3d3;
+}
+
+.input.section#developer-tools{
+	float:right;
+}
+
+.page.panel.wrapper#offline{
+	text-align:center;
+}
+
+.offline.header{
+	cursor:default;
+	font-family:'Indie Flower',cursive;
+	color:#3b3d3e;
+}
+
+.offline.header.main{
+	font-size:40px;
+}
+
+.offline.header.low{
+	font-size:35px;
+}
+
+.offline.lol{
+	margin:1.5em auto 1.5em auto;
+}
+
+.error#profile-tab-message{
+	cursor:default;
+	padding:10px 0 10px 0;
+	color:#800;
+	font-size:16px;
+	text-align:center;
+}
+
+.error#activity{
+	cursor:default;
+	color:#800;
+	font-size:30px;
+	text-align:center;
+}
+
+.dialog.panel.wrapper{
+	margin:0 auto 0 auto;
+	border-radius:2px;
+	text-align:center;
+	color:#000;
+}
+
+.notification.wrapper{
+	cursor:default;
+	margin:0 0 1em 0;
+	padding:10px;
+}
+
+.notification.valid{
+	color:#358024;
+	background-color:#e1ffcf;
+	border-radius:2px;
+	border:1px solid #61ae50;
+}
+
+.notification.error{
+	color:#800;
+	background-color:#fed9d9;
+	border-radius:2px;
+	border:1px solid #800;
+}
+
+.notification.message{
+	cursor:default;
+	font-size:14px;
+	font-weight:bold;
+	text-align:center;
+}
+
+.cookie.message{
+	margin:2em 0 -2em 0;
+	cursor:default;
+	font-family:'Yanone Kaffeesatz',sans-serif;
+	font-size:16px;
+	font-weight:bold;
+	text-align:center;
+	color:#696969;
+}
+
+.disclaimer.wrapper{
+	width:600px;
+	margin:1em auto 1em auto;
+	padding:10px;
+	text-align:center;
+	background-color:#fed9d9;
+	color:#800;
+	border:1px solid #800;
+	border-radius:4px;
+}
+
+.disclaimer.title{
+	cursor:default;
+	font-weight:bold;
+	font-size:28px;
+}
+
+.disclaimer.message{
+	cursor:default;
+	font-size:12px;
+	color:#000;
+}
+
+.bottom.copyright.wrapper{
+	margin:1em 0 1em 0;
+	padding:15px 10px 15px 10px;
+	background-color:#fff;
+	border:1px solid #d3d3d3;
+	border-radius:4px;
+}
+
+.bottom.copyright.message{
+	cursor:default;
+	font-size:12px;
+}
+
+.bottom.statistics.wrapper{
+	margin:1em 0 1em 0;
+}
+
+.bottom.statistics.title{
+	cursor:default;
+	font-size:24px;
+	font-weight:bold;
+}
+
+.bottom.statistics.user.link{
+	font-weight:bold;
+	color:#444;
+}
+
+.bottom.statistics.active.list{
+	margin-left:1em;
+}
+
+.bottom.social.icon{
+	display:inline-block;
+	font-size:26.6667px;
+	text-align:center;
+	height:40px;
+	width:40px;
+	line-height:40px;
+	border-radius:2px;
+}
+
+.bottom.social.icon.facebook{
+	background-color:#3b5998;
+	color:#fff;
+	height:38px;
+	border-bottom:2px solid #2f477a;
+}
+
+.bottom.social.icon.twitter{
+	background-color:#44ccf6;
+	color:#fff;
+	height:38px;
+	border-bottom:2px solid #36a3c5;
+}
+
+.footer.wrapper{
+	margin:1em 0 1em 0;
+	float:right;
+}
+
+.footer.copyright.message{
+	cursor:default;
+	font-size:12px;
+}
+
+.copyright.link{
+	font-weight:bold;
+	text-decoration:underline;
+	color:black;
+}
